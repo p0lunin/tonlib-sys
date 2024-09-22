@@ -279,8 +279,8 @@ fn build_emulator(cmake_build_type: &str) {
         .define("PORTABLE", "1")
         .define("CMAKE_BUILD_TYPE", cmake_build_type)
         // multi-thread build used to fail compilation. Please try comment out next 2 lines if you have build errors
-        .build_arg("-j")
-        .build_arg(available_parallelism().unwrap().get().to_string())
+        // .build_arg("-j")
+        // .build_arg(available_parallelism().unwrap().get().to_string())
         .build_target("emulator")
         .always_configure(true)
         .very_verbose(false);
